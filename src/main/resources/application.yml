@@ -1,0 +1,66 @@
+application:
+  version: 1.0.0
+  title: fineapple
+
+spring:
+  profiles:
+    active: local #profiles 선언하여 적용할 profile을 선택 한다.
+
+  thymeleaf:
+    view-names: thymeleaf/*
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+#    url: jdbc:h2:file:/data/sample
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: myGroup
+
+--- #local 환경
+spring:
+  profiles: local
+logging:
+  level:
+    root: ERROR
+    com.genie.fineapple: trace
+#    jdbc.sqltiming: ERROR
+#    jdbc.sqlonly: ERROR
+#    jdbc.audit: ERROR
+#    jdbc.resultset: ERROR
+#    jdbc.resultsettable: ERROR
+#    jdbc.connection: ERROR
+  file:
+#    max-size: 500MB
+#    max-history: 99999
+    path: logs
+#  pattern:
+#    console: "[%yellow(%d{yyyy-MM-dd HH:mm:ss}:%-6relative)] [%thread] %highlight(%-5level) : %green(%logger.%M) [line:%L] %mdc : %msg%n"
+#    file: "[%d{yyyy-MM-dd HH:mm:ss}:%-6relative] [%thread] %-5level : %logger.%M [line:%L] %mdc : %msg%n"
+
+--- #dev 환경
+spring:
+  profiles: dev
+logging:
+  level:
+    root: info
+
+--- #prod 환경
+spring:
+  profiles: prod
+server:
+  port: 9090
+logging:
+  level:
+    root: error
