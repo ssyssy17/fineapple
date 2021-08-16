@@ -1,4 +1,4 @@
-package com.genie.fineapple.member;
+package com.genie.fineapple.zzz.member;
 
 import org.springframework.data.repository.CrudRepository;
 

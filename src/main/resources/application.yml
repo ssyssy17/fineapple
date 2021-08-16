@@ -23,10 +23,24 @@ spring:
     username: sa
     password:
 
+rabbitmq:
+  test:
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+#    virtualHost: levi.vhost
+    routeKey: test.route
+    exchangeName: test.exchange
+    queueName: testQueue
+#    deadLetterExchange: dead.letter.exchange
+#    deadLetterRouteKey: dead.letter.route
+
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: myGroup
+
 
 --- #local 환경
 spring:

@@ -1,9 +1,8 @@
-package com.genie.fineapple.common;
+package com.genie.fineapple.zzz;
 
-import lombok.Data;
+import com.genie.fineapple.zzz.BasicResponse;
 import lombok.RequiredArgsConstructor;
 
-@Data
 @RequiredArgsConstructor
 public class ErrorResponse extends BasicResponse {
     private final String code;

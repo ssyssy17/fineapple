@@ -1,4 +1,4 @@
-package com.genie.fineapple.member.login;
+package com.genie.fineapple.zzz.member.login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

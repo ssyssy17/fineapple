@@ -1,4 +1,4 @@
-package com.genie.fineapple.common;
+package com.genie.fineapple.zzz;
 
 public abstract class BasicResponse {
 }

@@ -1,4 +1,4 @@
-package com.genie.fineapple.common;
+package com.genie.fineapple.zzz;
 
 import lombok.Getter;
 import lombok.Setter;
